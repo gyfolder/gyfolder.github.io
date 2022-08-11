@@ -1,4 +1,4 @@
-I"3C<p>This post is to enable Page Views on the <a href="https://github.com/cotes2020/jekyll-theme-chirpy/"><strong>Chirpy</strong></a> theme based blog that you just built. This requires technical knowledge and it’s recommended to keep the <code class="language-plaintext highlighter-rouge">google_analytics.pv.*</code> empty unless you have a good reason. If your website has low traffic, the page views count would discourage you to write more blogs. With that said, let’s start with the setup.</p>
+I"�G<p>This post is to enable Page Views on the <a href="https://github.com/cotes2020/jekyll-theme-chirpy/"><strong>Chirpy</strong></a> theme based blog that you just built. This requires technical knowledge and it’s recommended to keep the <code class="language-plaintext highlighter-rouge">google_analytics.pv.*</code> empty unless you have a good reason. If your website has low traffic, the page views count would discourage you to write more blogs. With that said, let’s start with the setup.</p>
 
 <h2 id="set-up-google-analytics">Set up Google Analytics</h2>
 
@@ -32,13 +32,19 @@
 
 <p>Now, click on the new data stream and grab the <strong>Measurement ID</strong>. It should look something like <code class="language-plaintext highlighter-rouge">G-V6XXXXXXXX</code>. Copy this to your <code class="language-plaintext filepath highlighter-rouge">_config.yml</code> file:</p>
 
-<div file="_config.yml" class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">google_analytics</span><span class="pi">:</span>
+<div file="_config.yml" class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="na">google_analytics</span><span class="pi">:</span>
   <span class="na">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">G-V6XXXXXXX'</span>   <span class="c1"># fill in your Google Analytics ID</span>
   <span class="c1"># Google Analytics pageviews report settings</span>
   <span class="na">pv</span><span class="pi">:</span>
     <span class="na">proxy_endpoint</span><span class="pi">:</span>   <span class="c1"># fill in the Google Analytics superProxy endpoint of Google App Engine</span>
     <span class="na">cache_path</span><span class="pi">:</span>       <span class="c1"># the local PV cache data, friendly to visitors from GFW region</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>When you push these changes to your blog, you should start seeing the traffic on your Google Analytics. Play around with the Google Analytics dashboard to get familiar with the options available as it takes like 5 mins to pick up your changes. You should now be able to monitor your traffic in real time.</p>
 
@@ -93,7 +99,28 @@
   <li>
     <p>Run the following commands:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">[root@bc96abf71ef8 /]#</span><span class="w"> </span>gcloud init
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="gp">[root@bc96abf71ef8 /]#</span><span class="w"> </span>gcloud init
 <span class="go">
 ~snip~
 
@@ -114,7 +141,7 @@ item): 1
 
 </span><span class="gp">[root@bc96abf71ef8 /]#</span><span class="w"> </span>gcloud info
 <span class="gp">#</span><span class="w"> </span>Your selected project info should be displayed here
-</code></pre></div>    </div>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
   </li>
 </ol>
 
@@ -127,9 +154,11 @@ item): 1
   <li>
     <p>Remove the first 2 lines in the <a href="https://github.com/googleanalytics/google-analytics-super-proxy/blob/master/src/app.yaml#L1-L2"><code class="language-plaintext filepath highlighter-rouge">src/app.yaml</code></a> file:</p>
 
-    <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- application: your-project-id
+    <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="gd">- application: your-project-id
 - version: 1
-</span></code></pre></div>    </div>
+</span></pre></td></tr></tbody></table></code></pre></div>    </div>
   </li>
   <li>
     <p>In <code class="language-plaintext filepath highlighter-rouge">src/config.py</code>, add the <code class="language-plaintext highlighter-rouge">OAUTH_CLIENT_ID</code> and <code class="language-plaintext highlighter-rouge">OAUTH_CLIENT_SECRET</code> that you gathered from your App Engine Dashboard.</p>
@@ -137,7 +166,23 @@ item): 1
   <li>
     <p>Enter any random key for <code class="language-plaintext highlighter-rouge">XSRF_KEY</code>, your <code class="language-plaintext filepath highlighter-rouge">config.py</code> should look similar to this</p>
 
-    <div file="src/config.py" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/python2.7
+    <div file="src/config.py" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="c1">#!/usr/bin/python2.7
 </span>
 <span class="n">__author__</span> <span class="o">=</span> <span class="s">'pete.frisella@gmail.com (Pete Frisella)'</span>
 
@@ -153,7 +198,7 @@ item): 1
 
 <span class="c1"># XSRF Settings
 </span><span class="n">XSRF_KEY</span> <span class="o">=</span> <span class="s">'OnceUponATimeThereLivedALegend'</span>
-</code></pre></div>    </div>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
 
     <blockquote class="prompt-info">
       <p>You can configure a custom domain instead of <code class="language-plaintext highlighter-rouge">https://PROJECT_ID.REGION_ID.r.appspot.com</code>.
@@ -163,7 +208,34 @@ But, for the sake of keeping it simple, we will be using the Google provided def
   <li>
     <p>From inside the <code class="language-plaintext filepath highlighter-rouge">src/</code> directory, deploy the app</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">[root@bc96abf71ef8 src]#</span><span class="w"> </span>gcloud app deploy
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="gp">[root@bc96abf71ef8 src]#</span><span class="w"> </span>gcloud app deploy
 <span class="go">Services to deploy:
 
 descriptor:      [/tmp/google-analytics-super-proxy/src/app.yaml]
@@ -190,7 +262,7 @@ You can stream logs from the command line by running:
 <span class="go">
 To view your application in the web browser run:
 </span><span class="gp">$</span><span class="w"> </span>gcloud app browse
-</code></pre></div>    </div>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
   </li>
   <li>
     <p>Visit the deployed service. Add a <code class="language-plaintext highlighter-rouge">/admin</code> to the end of the URL.</p>
@@ -246,12 +318,17 @@ To view your application in the web browser run:
 
 <p>Update the <code class="language-plaintext filepath highlighter-rouge">_config.yml</code> file of <a href="https://github.com/cotes2020/jekyll-theme-chirpy/"><strong>Chirpy</strong></a> project with the values from your dashboard, to look similar to the following:</p>
 
-<div file="_config.yml" class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">google_analytics</span><span class="pi">:</span>
+<div file="_config.yml" class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="na">google_analytics</span><span class="pi">:</span>
   <span class="na">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">G-V6XXXXXXX'</span>   <span class="c1"># fill in your Google Analytics ID</span>
   <span class="na">pv</span><span class="pi">:</span>
     <span class="na">proxy_endpoint</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://PROJECT_ID.REGION_ID.r.appspot.com/query?id=&lt;ID</span><span class="nv"> </span><span class="s">FROM</span><span class="nv"> </span><span class="s">SUPER</span><span class="nv"> </span><span class="s">PROXY&gt;'</span>
     <span class="na">cache_path</span><span class="pi">:</span>       <span class="c1"># the local PV cache data, friendly to visitors from GFW region</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Now, you should see the Page View enabled on your blog.</p>
 

@@ -1,4 +1,4 @@
-I"p%<p>This post is to show Markdown syntax rendering on <a href="https://github.com/cotes2020/jekyll-theme-chirpy/fork"><strong>Chirpy</strong></a>, you can also use it as an example of writing. Now, let’s start looking at text and typography.</p>
+I"�'<p>This post is to show Markdown syntax rendering on <a href="https://github.com/cotes2020/jekyll-theme-chirpy/fork"><strong>Chirpy</strong></a>, you can also use it as an example of writing. Now, let’s start looking at text and typography.</p>
 
 <h2 id="titles">Titles</h2>
 <hr />
@@ -215,32 +215,43 @@
 
 <h3 id="common">Common</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a common code snippet, without syntax highlight and line number.
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>This is a common code snippet, without syntax highlight and line number.
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="specific-languages">Specific Languages</h3>
 
 <h4 id="console">Console</h4>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">env</span> |grep SHELL
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span><span class="nb">env</span> |grep SHELL
 <span class="go">SHELL=/usr/local/bin/bash
 PYENV_SHELL=bash
-</span></code></pre></div></div>
+</span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="shell">Shell</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-ne</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-ne</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
     </span><span class="nb">echo</span> <span class="s2">"The command was not successful."</span><span class="p">;</span>
     <span class="c">#do the needful / exit</span>
 <span class="k">fi</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="specific-filename">Specific filename</h3>
 
-<div file="_sass/jekyll-theme-chirpy.scss" class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span>
+<div file="_sass/jekyll-theme-chirpy.scss" class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">@import</span>
   <span class="s2">"colors/light-typography"</span><span class="o">,</span>
   <span class="s2">"colors/dark-typography"</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="reverse-footnote">Reverse Footnote</h2>
 
