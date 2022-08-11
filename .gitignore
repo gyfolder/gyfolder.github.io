@@ -12,8 +12,6 @@
 _site
 vendor
 Gemfile.lock
-.jekyll-cache
-.jekyll-cache\Jekyll\cache\*
 
 # rubygem
 *.gem
