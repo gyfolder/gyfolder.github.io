@@ -1,5 +1,7 @@
 <div align="center">
 
+  [Go to giyong's Blog](https://gyfolder.github.io)
+
   # Chirpy Jekyll Theme
 
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
